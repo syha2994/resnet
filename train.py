@@ -8,6 +8,7 @@ import torch.optim as optim
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 from tqdm import tqdm
+import vessl
 
 from model import build_resnet18
 
@@ -100,6 +101,7 @@ def main() -> None:
             torch.save(model.state_dict(), args.save_path)
             print(f"✅ 모델 저장: {args.save_path} (Val Acc: {val_acc:.4f})")
 
+        vessl.log({"accuracy": best_acc, "loss": avg_loss})
     print("🎉 학습 완료 – Best Val Acc:", best_acc)
 
 
