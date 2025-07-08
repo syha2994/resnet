@@ -19,9 +19,9 @@ def main() -> None:
     parser.add_argument("--learning-rate", type=float, default=float(os.environ.get("LEARNING_RATE", 1e-3)))
     parser.add_argument("--num-workers", type=int, default=int(os.environ.get("NUM_WORKERS", 4)))
     parser.add_argument("--image-size", type=int, default=int(os.environ.get("IMAGE_SIZE", 224)))
-    parser.add_argument("--train-dir", type=str, default=os.environ.get("SM_CHANNEL_TRAIN", "/Users/seungyeon/PycharmProjects/MLOps_example/classification/cat_and_dog/train"))
-    parser.add_argument("--val-dir", type=str, default=os.environ.get("SM_CHANNEL_VAL", "/Users/seungyeon/PycharmProjects/MLOps_example/classification/cat_and_dog/val"))
-    parser.add_argument("--save-path", type=str, default=os.environ.get("SM_MODEL_DIR", "/Users/seungyeon/PycharmProjects/MLOps_example/classification/resnet/best_model.pth"))
+    parser.add_argument("--train-dir", type=str, default=os.environ.get("TRAIN_DATA_DIR", "/Users/seungyeon/PycharmProjects/MLOps_example/classification/cat_and_dog/train"))
+    parser.add_argument("--val-dir", type=str, default=os.environ.get("VAL_DATA_DIR", "/Users/seungyeon/PycharmProjects/MLOps_example/classification/cat_and_dog/val"))
+    parser.add_argument("--save-path", type=str, default=os.environ.get("MODEL_DIR", "/Users/seungyeon/PycharmProjects/MLOps_example/classification/resnet/best_model.pth"))
     args = parser.parse_args()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
