@@ -1,0 +1,64 @@
+# === macOS 시스템 파일 ===
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# === Python 가상환경 & 캐시 ===
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# pip cache
+pip-wheel-metadata/
+*.egg-info/
+dist/
+build/
+
+# === VSCode 설정 파일 ===
+.vscode/
+*.code-workspace
+
+# === Jupyter Notebook checkpoint ===
+.ipynb_checkpoints/
+
+# === 로그 파일 ===
+*.log
+
+# === 환경 설정 파일 ===
+.env
+.env.*
+*.secret
+*.token
+
+# === 테스트 & 커버리지 ===
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# === 기타 IDE 설정 ===
+.idea/
+*.iml
+
+# === 기타 무시하고 싶은 것들 (필요 시 추가) ===
+*.swp
+*.bak
+*.tmp
+*~
+
+# === 모델 파일이나 데이터 ===
+*.pth
+*.h5
+*.pt
+*.ckpt
+*.onnx
+
+# === Sagemaker 환경일 경우 ===
+output/
+.ipynb_checkpoints/
